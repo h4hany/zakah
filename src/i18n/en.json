@@ -1,0 +1,70 @@
+{
+  "common": {
+    "calculate": "Calculate",
+    "export": "Export PDF",
+    "result": "Result",
+    "authority": "Authority",
+    "zakat": "Zakat",
+    "purification": "Purification",
+    "select": "Select:",
+    "upload": "Upload Excel File",
+    "dragDrop": "Drag & drop or click to browse"
+  },
+  "home": {
+    "title": "Zakat & Purification Calculator",
+    "subtitle": "Trusted Islamic Finance Widget",
+    "excelCta": "Start with Excel",
+    "formCta": "Use Smart Form",
+    "features": {
+      "aaoifi": "AAOIFI Standards",
+      "goldAssets": "Gold & Assets Zakat",
+      "pdfReports": "PDF Reports",
+      "rtlMulti": "RTL / Multi-language"
+    },
+    "trust": "Built for Mosques, Fintech & Islamic Institutions"
+  },
+  "excel": {
+    "title": "Excel Mode",
+    "columnMapping": "Map Columns",
+    "sharesCount": "Shares Count",
+    "sharePrice": "Share Price",
+    "profit": "Profit",
+    "haramRatio": "Haram %",
+    "ignore": "Ignore"
+  },
+  "form": {
+    "title": "Zakat & Purification Form",
+    "cash": "Cash & Bank",
+    "cashOnHand": "Cash on hand",
+    "bankBalance": "Bank balance",
+    "goldSilver": "Gold & Silver",
+    "goldGrams": "Gold grams",
+    "goldPrice": "Price per gram",
+    "silverGrams": "Silver grams",
+    "silverPrice": "Price per gram",
+    "investments": "Investments",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "funds": "Funds / ETFs",
+    "business": "Business Assets",
+    "inventory": "Inventory",
+    "receivables": "Receivables",
+    "businessCash": "Business cash",
+    "liabilities": "Liabilities",
+    "shortTermDebts": "Short-term debts"
+  },
+  "result": {
+    "totalPayable": "Total Payable",
+    "zakatAmount": "Zakat Amount",
+    "purification": "Purification",
+    "nisabStatus": "Nisab Status",
+    "nisabMet": "Nisab Met",
+    "nisabNotMet": "Nisab Not Met"
+  },
+  "header": {
+    "title": "Zakat Calculator",
+    "subtitle": "Islamic Finance Widget"
+  }
+}
+
+

@@ -1,0 +1,70 @@
+{
+  "common": {
+    "calculate": "احسب",
+    "export": "تصدير PDF",
+    "result": "النتيجة",
+    "authority": "السلطة",
+    "zakat": "الزكاة",
+    "purification": "التطهير",
+    "select": "اختر:",
+    "upload": "رفع ملف Excel",
+    "dragDrop": "اسحب وأفلت أو انقر للتصفح"
+  },
+  "home": {
+    "title": "حاسبة الزكاة والتطهير",
+    "subtitle": "أداة التمويل الإسلامي الموثوقة",
+    "excelCta": "ابدأ بـ Excel",
+    "formCta": "استخدم النموذج الذكي",
+    "features": {
+      "aaoifi": "معايير الأيوفي",
+      "goldAssets": "زكاة الذهب والأصول",
+      "pdfReports": "تقارير PDF",
+      "rtlMulti": "RTL / متعدد اللغات"
+    },
+    "trust": "مبني للمساجد والتمويل الإسلامي والمؤسسات الإسلامية"
+  },
+  "excel": {
+    "title": "وضع Excel",
+    "columnMapping": "تعيين الأعمدة",
+    "sharesCount": "عدد الأسهم",
+    "sharePrice": "سعر السهم",
+    "profit": "الربح",
+    "haramRatio": "نسبة الحرام %",
+    "ignore": "تجاهل"
+  },
+  "form": {
+    "title": "نموذج الزكاة والتطهير",
+    "cash": "النقد والبنك",
+    "cashOnHand": "النقد في اليد",
+    "bankBalance": "رصيد البنك",
+    "goldSilver": "الذهب والفضة",
+    "goldGrams": "جرامات الذهب",
+    "goldPrice": "السعر لكل جرام",
+    "silverGrams": "جرامات الفضة",
+    "silverPrice": "السعر لكل جرام",
+    "investments": "الاستثمارات",
+    "stocks": "الأسهم",
+    "crypto": "العملات المشفرة",
+    "funds": "صناديق / ETFs",
+    "business": "أصول الأعمال",
+    "inventory": "المخزون",
+    "receivables": "الذمم المدينة",
+    "businessCash": "نقد الأعمال",
+    "liabilities": "الخصوم",
+    "shortTermDebts": "الديون قصيرة الأجل"
+  },
+  "result": {
+    "totalPayable": "المبلغ الإجمالي المستحق",
+    "zakatAmount": "مبلغ الزكاة",
+    "purification": "التطهير",
+    "nisabStatus": "حالة النصاب",
+    "nisabMet": "تم الوصول للنصاب",
+    "nisabNotMet": "لم يتم الوصول للنصاب"
+  },
+  "header": {
+    "title": "حاسبة الزكاة",
+    "subtitle": "أداة التمويل الإسلامي"
+  }
+}
+
+

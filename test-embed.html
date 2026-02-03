@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Widget Embed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+    
+    <!-- Widget CSS and JS - Loading from local dist folder -->
+    <!-- IMPORTANT: Load config BEFORE the widget script -->
+    <link rel="stylesheet" href="./dist/zakat-widget.css">
+    
+    <!-- Optional: Configure widget BEFORE loading the script -->
+    <script>
+        window.ZakatWidgetConfig = {
+            language: "en", // "en" | "ar"
+            position: "bottom-right", // "bottom-right" | "bottom-left"
+            theme: {
+                primary: "#C9A24D",
+                dark: "#212325",
+                surface: "#E7E9EB",
+                radius: "16px",
+                font: "Outfit",
+                logo: ""
+            }
+        };
+    </script>
+    
+    <!-- Load widget script (NOT as module - it's IIFE) -->
+    <script src="./dist/zakat-widget.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Zakat Widget Embed Test</h1>
+        <p>This page tests the embedded widget. You should see a floating button in the bottom-right corner.</p>
+        <p>Click the button to open the widget modal.</p>
+        
+        <h2>Test Controls</h2>
+        <button onclick="window.ZakatWidget.open()" style="padding: 10px 20px; margin: 5px; background: #C9A24D; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Open Widget
+        </button>
+        <button onclick="window.ZakatWidget.close()" style="padding: 10px 20px; margin: 5px; background: #666; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Close Widget
+        </button>
+        
+        <h2>Instructions</h2>
+        <ol>
+            <li>Make sure you've run <code>npm run build</code> to generate the dist files</li>
+            <li>Serve this HTML file with a local server (e.g., <code>python -m http.server</code> or <code>npx serve</code>)</li>
+            <li>Look for the floating button in the bottom-right corner</li>
+            <li>Click it to test the widget functionality</li>
+        </ol>
+    </div>
+</body>
+</html>
+

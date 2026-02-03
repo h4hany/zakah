@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A24D;
+  --dark: #212325;
+  --surface: #E7E9EB;
+  --radius: 16px;
+  --font: 'Outfit', sans-serif;
+}
+
+* {
+  font-family: var(--font);
+}
+
+.mono {
+  font-family: 'Source Code Pro', monospace;
+}
+
+body {
+  background: radial-gradient(circle at top right, #2a2c2e, #212325);
+  min-height: 100vh;
+}
+
+.widget-card {
+  background: linear-gradient(145deg, #2a2c2e, #212325);
+  border: 1px solid rgba(201, 162, 77, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.excel-grid {
+  display: grid;
+  grid-template-columns: 32px repeat(auto-fit, minmax(120px, 1fr));
+  background: #1a1c1e;
+  font-size: 0.813rem;
+}
+
+.cell {
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 0.625rem;
+}
+
+.cell-header {
+  background: rgba(201, 162, 77, 0.08);
+  border-bottom: 1px solid rgba(201, 162, 77, 0.25);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.cell-row-num {
+  background: rgba(0, 0, 0, 0.3);
+  color: #666;
+  font-size: 0.688rem;
+  text-align: center;
+}
+
+.tag-selector {
+  display: inline-block;
+  background: rgba(201, 162, 77, 0.15);
+  border: 1px solid rgba(201, 162, 77, 0.3);
+  color: #C9A24D;
+  font-size: 0.625rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-selector:hover {
+  background: rgba(201, 162, 77, 0.25);
+  border-color: rgba(201, 162, 77, 0.5);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.float-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+

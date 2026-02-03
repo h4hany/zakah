@@ -20,7 +20,12 @@ export default function ResultDrawer({
   inputs,
 }: ResultDrawerProps) {
   const { t } = useTranslation();
-  const config = getConfig();
+  let config;
+  try {
+    config = getConfig();
+  } catch {
+    config = { theme: { logo: '', primary: '#C9A24D' } };
+  }
   
   const total = (zakat?.zakat || 0) + (purification?.purification || 0);
   

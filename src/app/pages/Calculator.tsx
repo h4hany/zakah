@@ -12,7 +12,10 @@ export default function Calculator() {
       {/* Tabs */}
       <div className="flex items-center gap-1.5 bg-black/20 rounded-xl p-1">
         <button
-          onClick={() => setActiveTab('excel')}
+          onClick={(e) => {
+            e.stopPropagation();
+            setActiveTab('excel');
+          }}
           className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
             activeTab === 'excel'
               ? 'bg-yellow-600 text-black'
@@ -22,7 +25,10 @@ export default function Calculator() {
           📊 {t('home.excelCta')}
         </button>
         <button
-          onClick={() => setActiveTab('form')}
+          onClick={(e) => {
+            e.stopPropagation();
+            setActiveTab('form');
+          }}
           className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
             activeTab === 'form'
               ? 'bg-yellow-600 text-black'

@@ -31,14 +31,23 @@ body {
 
 .excel-grid {
   display: grid;
-  grid-template-columns: 32px repeat(auto-fit, minmax(120px, 1fr));
   background: #1a1c1e;
   font-size: 0.813rem;
+  width: 100%;
+  min-width: fit-content;
 }
 
 .cell {
   border: 1px solid rgba(255, 255, 255, 0.03);
   padding: 0.625rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+table .cell {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .cell-header {

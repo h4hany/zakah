@@ -4,6 +4,7 @@ import { resolve } from 'path';
 
 export default defineConfig(({ command, mode }) => {
   const isDev = command === 'serve';
+  const buildStandalone = process.env.BUILD_STANDALONE === 'true';
   
   return {
     plugins: [react()],
@@ -17,8 +18,18 @@ export default defineConfig(({ command, mode }) => {
       'process.env.NODE_ENV': JSON.stringify(mode === 'production' ? 'production' : 'development'),
       'process.env': '{}',
     },
-    // Only use lib mode for production builds
-    ...(isDev ? {} : {
+    // Build standalone app (landing page) or widget
+    ...(isDev ? {} : buildStandalone ? {
+      build: {
+        outDir: 'dist-standalone',
+        rollupOptions: {
+          input: resolve(__dirname, 'index.html'),
+        },
+        // For GitHub Pages - ensure assets are relative
+        assetsDir: 'assets',
+        base: './',
+      },
+    } : {
       build: {
         lib: {
           entry: resolve(__dirname, 'src/main.ts'),

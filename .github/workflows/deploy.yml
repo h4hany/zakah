@@ -31,11 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build widget
-        run: npm run build
-
-      - name: Copy demo page
-        run: cp index-gh-pages.html dist/index.html
+      - name: Build for GitHub Pages
+        run: npm run build:gh-pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

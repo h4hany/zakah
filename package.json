@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:embed": "npm run build && node server.js",
-    "serve:test": "node server.js"
+    "serve:test": "node server.js",
+    "build:gh-pages": "npm run build && cp index-gh-pages.html dist/index.html"
   },
   "keywords": [],
   "author": "",

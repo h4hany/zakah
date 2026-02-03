@@ -40,6 +40,8 @@ export default defineConfig(({ command, mode }) => {
         },
         cssCodeSplit: false,
         outDir: 'dist',
+        // For GitHub Pages - ensure assets are relative
+        assetsDir: '',
       },
     }),
     css: {

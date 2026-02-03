@@ -2,7 +2,7 @@
 
 A production-ready, embeddable React widget for calculating Zakat and Purification according to Islamic finance standards.
 
-## Features
+## 🌟 Features
 
 - 🕌 **Full Zakat Calculation** - Cash, gold, silver, investments, business assets
 - 📊 **Excel Mode** - Upload and parse Excel files for bulk calculations
@@ -13,19 +13,21 @@ A production-ready, embeddable React widget for calculating Zakat and Purificati
 - 🔒 **Shadow DOM** - Complete style isolation from host website
 - ⚡ **Lightweight** - Optimized for performance
 
-## Installation
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
 npm install
 ```
 
-## Development
+### Development
 
 ```bash
 npm run dev
 ```
 
-## Build
+### Build
 
 ```bash
 npm run build
@@ -35,7 +37,7 @@ This will generate:
 - `dist/zakat-widget.js` - The widget bundle
 - `dist/zakat-widget.css` - The stylesheet
 
-## Embedding the Widget
+## 📦 Embedding the Widget
 
 ### Basic Usage
 
@@ -74,17 +76,18 @@ Configure the widget before the script loads:
 
 ```javascript
 window.ZakatWidget.init();
+window.ZakatWidget.open();
+window.ZakatWidget.close();
 ```
 
-## Routes
+## 🌐 GitHub Pages Deployment
 
-All routes are internal (Memory Router) and don't affect the host URL:
+This project is configured for automatic deployment to GitHub Pages. See [GITHUB-PAGES.md](./GITHUB-PAGES.md) for detailed instructions.
 
-- `/` - Home Screen
-- `/excel` - Excel Mode
-- `/form` - Form Mode
+**Live Demo**: Once deployed, your widget will be available at:
+`https://YOUR_USERNAME.github.io/YOUR_REPO/`
 
-## Architecture
+## 📁 Project Structure
 
 ```
 /src
@@ -117,7 +120,7 @@ All routes are internal (Memory Router) and don't affect the host URL:
     ar.json          # Arabic translations
 ```
 
-## Zakat Calculation
+## 🧮 Zakat Calculation
 
 The widget calculates Zakat based on:
 
@@ -125,12 +128,12 @@ The widget calculates Zakat based on:
 - **Nisab**: Based on gold (87.48g) or silver (612.36g) standard
 - **Zakat Rate**: 2.5% of zakatable assets if nisab is met
 
-## Purification Calculation
+## 🔄 Purification Calculation
 
 - **Formula**: `profit * (haramRatio / 100)`
 - Supports bulk calculations from Excel files
 
-## PDF Export
+## 📄 PDF Export
 
 Exports include:
 - Date and authority
@@ -139,18 +142,20 @@ Exports include:
 - Total payable
 - Branded header with logo
 
-## Browser Support
+## 🌍 Browser Support
 
 - Chrome/Edge (latest)
 - Firefox (latest)
 - Safari (latest)
 
-## License
+## 📝 License
 
 ISC
 
-## Support
+## 🤝 Support
 
 Built for Mosques, Fintech & Islamic Institutions
 
+---
 
+**Made with ❤️ for the Islamic Finance Community**

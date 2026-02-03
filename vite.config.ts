@@ -5,8 +5,12 @@ import { resolve } from 'path';
 export default defineConfig(({ command, mode }) => {
   const isDev = command === 'serve';
   const buildStandalone = process.env.BUILD_STANDALONE === 'true';
+  // For GitHub Pages, use relative paths for standalone build
+  // Widget build doesn't need base path (it's a library)
+  const base = buildStandalone ? './' : undefined;
   
   return {
+    base,
     plugins: [react()],
     resolve: {
       alias: {
@@ -27,7 +31,6 @@ export default defineConfig(({ command, mode }) => {
         },
         // For GitHub Pages - ensure assets are relative
         assetsDir: 'assets',
-        base: './',
       },
     } : {
       build: {

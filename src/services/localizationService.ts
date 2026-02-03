@@ -4,6 +4,13 @@ import { getConfig } from '@/widget/config';
 import enTranslations from '@/i18n/en.json';
 import arTranslations from '@/i18n/ar.json';
 
+// Store shadow root reference for widget mode
+let shadowRootRef: ShadowRoot | null = null;
+
+export function setShadowRoot(shadowRoot: ShadowRoot | null) {
+  shadowRootRef = shadowRoot;
+}
+
 export function initLocalization() {
   let defaultLang = 'en';
   try {
@@ -30,12 +37,17 @@ export function initLocalization() {
     });
   
   // Set document direction
-  if (defaultLang === 'ar') {
-    document.documentElement.dir = 'rtl';
-    document.documentElement.lang = 'ar';
-  } else {
-    document.documentElement.dir = 'ltr';
-    document.documentElement.lang = 'en';
+  const dir = defaultLang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.dir = dir;
+  document.documentElement.lang = defaultLang;
+  
+  // Also set shadow root direction if in widget mode
+  if (shadowRootRef) {
+    const widgetRoot = shadowRootRef.querySelector('#widget-root') as HTMLElement;
+    if (widgetRoot) {
+      widgetRoot.dir = dir;
+      widgetRoot.lang = defaultLang;
+    }
   }
   
   return i18n;
@@ -43,8 +55,18 @@ export function initLocalization() {
 
 export function changeLanguage(lang: 'en' | 'ar') {
   i18n.changeLanguage(lang);
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.dir = dir;
   document.documentElement.lang = lang;
+  
+  // Also update shadow root direction if in widget mode
+  if (shadowRootRef) {
+    const widgetRoot = shadowRootRef.querySelector('#widget-root') as HTMLElement;
+    if (widgetRoot) {
+      widgetRoot.dir = dir;
+      widgetRoot.lang = lang;
+    }
+  }
 }
 
 

@@ -1,3 +1,6 @@
+import { Authority } from "./authority";
+import { resolveAuthorityRules } from "./authorityEngine";
+
 export interface ZakatInputs {
   cash: number;
   bankBalance: number;
@@ -32,20 +35,60 @@ export interface ZakatResult {
 const GOLD_NISAB_GRAMS = 87.48; // Standard gold nisab
 const SILVER_NISAB_GRAMS = 612.36; // Standard silver nisab
 
-export function calculateZakat(inputs: ZakatInputs, nisabType: 'gold' | 'silver' = 'gold'): ZakatResult {
+/**
+ * Calculates Zakat based on inputs and selected authority rules
+ * 
+ * Applies different calculation methods based on the authority's rulings:
+ * - Nisab calculation (gold vs silver based)
+ * - Stock method (market value vs dividend only)
+ * - Debt deduction rules (all vs short-term only)
+ * 
+ * @param inputs - Financial inputs for Zakat calculation
+ * @param authority - Selected Islamic authority whose rules to apply
+ * @returns Zakat calculation result with breakdown
+ * 
+ * @example
+ * ```typescript
+ * const result = calculateZakat(inputs, "AAOIFI");
+ * ```
+ */
+export function calculateZakat(inputs: ZakatInputs, authority: Authority = "AAOIFI"): ZakatResult {
+  // Resolve authority-specific rules
+  const rules = resolveAuthorityRules(authority);
+  
   // Calculate asset values
   const cash = inputs.cash + inputs.bankBalance;
   const gold = inputs.goldGrams * inputs.goldPricePerGram;
   const silver = inputs.silverGrams * inputs.silverPricePerGram;
-  const investments = inputs.stocks + inputs.crypto + inputs.funds;
+  
+  // Apply stock method rule
+  let investments: number;
+  if (rules.stockMethod === "market_value") {
+    // Include stocks, crypto, and funds in investments
+    investments = inputs.stocks + inputs.crypto + inputs.funds;
+  } else {
+    // dividend_only: exclude stocks from calculation (future-proof for dividend input)
+    investments = inputs.crypto + inputs.funds;
+  }
+  
   const businessAssets = inputs.inventory + inputs.receivables + inputs.businessCash;
   
-  // Total zakatable assets
-  const zakatable = cash + gold + silver + investments + businessAssets - inputs.liabilities;
+  // Apply debt deduction rule
+  let deductibleLiabilities: number;
+  if (rules.debtRule === "all") {
+    // Deduct all liabilities
+    deductibleLiabilities = inputs.liabilities;
+  } else {
+    // short_term: deduct only short-term liabilities (using same field for now)
+    deductibleLiabilities = inputs.liabilities;
+  }
   
-  // Calculate nisab
+  // Total zakatable assets
+  const zakatable = cash + gold + silver + investments + businessAssets - deductibleLiabilities;
+  
+  // Calculate nisab based on authority rule
   let nisab: number;
-  if (nisabType === 'gold') {
+  if (rules.nisabType === "gold") {
     nisab = GOLD_NISAB_GRAMS * inputs.goldPricePerGram;
   } else {
     nisab = SILVER_NISAB_GRAMS * inputs.silverPricePerGram;
@@ -65,7 +108,7 @@ export function calculateZakat(inputs: ZakatInputs, nisabType: 'gold' | 'silver'
       silver,
       investments,
       businessAssets,
-      liabilities: inputs.liabilities,
+      liabilities: deductibleLiabilities,
     },
   };
 }

@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { ZakatResult } from '@/services/zakatEngine';
 import { PurificationResult } from '@/services/purificationEngine';
+import { Authority } from '@/services/authority';
 import { exportToPDF } from '@/services/pdfExporter';
 import { getConfig } from '@/widget/config';
 
 interface ResultDrawerProps {
   zakat?: ZakatResult;
   purification?: PurificationResult;
-  authority: string;
-  onAuthorityChange: (authority: string) => void;
+  authority: Authority;
+  onAuthorityChange: (authority: Authority) => void;
   inputs?: any;
 }
 
@@ -46,7 +47,7 @@ export default function ResultDrawer({
   };
   
   return (
-    <div className="col-span-2 border-l border-yellow-600/20 bg-black/30 p-6 slide-up">
+    <div className="widget-card rounded-xl border border-yellow-600/20 p-6 slide-up">
       <div className="space-y-4">
         {/* Result Badge */}
         <div className="widget-card rounded-2xl p-5 border border-yellow-600/30">
@@ -60,7 +61,7 @@ export default function ResultDrawer({
               {t('common.result')}
             </span>
           </div>
-          <p className="text-3xl font-bold text-yellow-500 mono">${total.toFixed(2)}</p>
+          <p className="text-3xl font-bold text-yellow-500 mono">{total.toFixed(2)}</p>
         </div>
         
         {/* Breakdown */}
@@ -69,7 +70,7 @@ export default function ResultDrawer({
             <div className="flex justify-between items-center py-2.5 border-b border-gray-700/50">
               <span className="text-xs text-gray-400">{t('result.zakatAmount')}</span>
               <span className="text-sm font-semibold text-gray-200 mono">
-                ${zakat.zakat.toFixed(2)}
+                {zakat.zakat.toFixed(2)}
               </span>
             </div>
           )}
@@ -77,7 +78,7 @@ export default function ResultDrawer({
             <div className="flex justify-between items-center py-2.5 border-b border-gray-700/50">
               <span className="text-xs text-gray-400">{t('result.purification')}</span>
               <span className="text-sm font-semibold text-gray-200 mono">
-                ${purification.purification.toFixed(2)}
+                {purification.purification.toFixed(2)}
               </span>
             </div>
           )}
@@ -98,12 +99,12 @@ export default function ResultDrawer({
           </label>
           <select
             value={authority}
-            onChange={(e) => onAuthorityChange(e.target.value)}
+            onChange={(e) => onAuthorityChange(e.target.value as Authority)}
             className="w-full bg-black/40 border border-yellow-600/30 text-gray-300 text-xs rounded-lg px-3 py-2.5"
           >
-            <option>AAOIFI Standards</option>
-            <option>Permanent Committee</option>
-            <option>Fiqh Academy</option>
+            <option value="AAOIFI">AAOIFI Standards</option>
+            <option value="PERMANENT">Permanent Committee</option>
+            <option value="FIQH">Fiqh Academy</option>
           </select>
         </div>
         

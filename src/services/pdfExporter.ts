@@ -1,11 +1,12 @@
 import jsPDF from 'jspdf';
 import { ZakatResult } from './zakatEngine';
 import { PurificationResult } from './purificationEngine';
+import { Authority, getAuthorityDisplayName } from './authority';
 
 export interface ExportData {
   zakat?: ZakatResult;
   purification?: PurificationResult;
-  authority: string;
+  authority: Authority;
   date: string;
   inputs?: any;
 }
@@ -45,7 +46,7 @@ export function exportToPDF(data: ExportData, config?: { logo?: string; primaryC
   
   // Date and Authority
   doc.text(`Date: ${data.date}`, 20, yPos);
-  doc.text(`Authority: ${data.authority}`, 20, yPos + 10);
+  doc.text(`Authority: ${getAuthorityDisplayName(data.authority)}`, 20, yPos + 10);
   
   yPos += 25;
   
@@ -59,31 +60,31 @@ export function exportToPDF(data: ExportData, config?: { logo?: string; primaryC
     doc.setFontSize(10);
     doc.setFont('helvetica', 'normal');
     
-    doc.text(`Zakatable Assets: $${data.zakat.zakatable.toFixed(2)}`, 25, yPos);
+    doc.text(`Zakatable Assets: ${data.zakat.zakatable.toFixed(2)}`, 25, yPos);
     yPos += 7;
-    doc.text(`Nisab: $${data.zakat.nisab.toFixed(2)}`, 25, yPos);
+    doc.text(`Nisab: ${data.zakat.nisab.toFixed(2)}`, 25, yPos);
     yPos += 7;
     doc.text(`Nisab Met: ${data.zakat.nisabMet ? 'Yes' : 'No'}`, 25, yPos);
     yPos += 7;
     
     doc.setFont('helvetica', 'bold');
-    doc.text(`Zakat Amount: $${data.zakat.zakat.toFixed(2)}`, 25, yPos);
+    doc.text(`Zakat Amount: ${data.zakat.zakat.toFixed(2)}`, 25, yPos);
     yPos += 10;
     
     doc.setFont('helvetica', 'normal');
     doc.text('Breakdown:', 25, yPos);
     yPos += 7;
-    doc.text(`  Cash: $${data.zakat.breakdown.cash.toFixed(2)}`, 30, yPos);
+    doc.text(`  Cash: ${data.zakat.breakdown.cash.toFixed(2)}`, 30, yPos);
     yPos += 7;
-    doc.text(`  Gold: $${data.zakat.breakdown.gold.toFixed(2)}`, 30, yPos);
+    doc.text(`  Gold: ${data.zakat.breakdown.gold.toFixed(2)}`, 30, yPos);
     yPos += 7;
-    doc.text(`  Silver: $${data.zakat.breakdown.silver.toFixed(2)}`, 30, yPos);
+    doc.text(`  Silver: ${data.zakat.breakdown.silver.toFixed(2)}`, 30, yPos);
     yPos += 7;
-    doc.text(`  Investments: $${data.zakat.breakdown.investments.toFixed(2)}`, 30, yPos);
+    doc.text(`  Investments: ${data.zakat.breakdown.investments.toFixed(2)}`, 30, yPos);
     yPos += 7;
-    doc.text(`  Business Assets: $${data.zakat.breakdown.businessAssets.toFixed(2)}`, 30, yPos);
+    doc.text(`  Business Assets: ${data.zakat.breakdown.businessAssets.toFixed(2)}`, 30, yPos);
     yPos += 7;
-    doc.text(`  Liabilities: $${data.zakat.breakdown.liabilities.toFixed(2)}`, 30, yPos);
+    doc.text(`  Liabilities: ${data.zakat.breakdown.liabilities.toFixed(2)}`, 30, yPos);
     yPos += 15;
   }
   

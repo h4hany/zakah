@@ -26,7 +26,7 @@ export default function AppLayout() {
   
   return (
     <div 
-      className="w-full max-w-6xl mx-auto relative"
+      className="w-full max-w-7xl mx-auto relative"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="widget-card rounded-3xl overflow-hidden">

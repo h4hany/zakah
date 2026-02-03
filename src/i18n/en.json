@@ -8,7 +8,9 @@
     "purification": "Purification",
     "select": "Select:",
     "upload": "Upload Excel File",
-    "dragDrop": "Drag & drop or click to browse"
+    "dragDrop": "Drag & drop or click to browse",
+    "zakatDescription": "Calculate annual Zakat obligation",
+    "purificationDescription": "Purify investment profits"
   },
   "home": {
     "title": "Zakat & Purification Calculator",

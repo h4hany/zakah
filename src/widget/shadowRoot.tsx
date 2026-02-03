@@ -3,10 +3,14 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { createRouter } from './router';
 import { applyThemeToShadowRoot } from '@/services/themeService';
-import { initLocalization } from '@/services/localizationService';
+import { initLocalization, setShadowRoot } from '@/services/localizationService';
+import i18n from 'i18next';
 import '@/index.css';
 
 export function renderInShadowRoot(shadowRoot: ShadowRoot) {
+  // Set shadow root reference for language changes
+  setShadowRoot(shadowRoot);
+  
   // Apply theme
   applyThemeToShadowRoot(shadowRoot);
   
@@ -161,6 +165,10 @@ export function renderInShadowRoot(shadowRoot: ShadowRoot) {
   const container = document.createElement('div');
   container.id = 'widget-root';
   container.style.cssText = 'width: 100%; height: 100%;';
+  // Set initial direction based on current language
+  const currentLang = i18n.language || 'en';
+  container.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  container.lang = currentLang;
   shadowRoot.appendChild(container);
   
   const root = createRoot(container);

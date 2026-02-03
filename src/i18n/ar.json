@@ -8,7 +8,9 @@
     "purification": "التطهير",
     "select": "اختر:",
     "upload": "رفع ملف Excel",
-    "dragDrop": "اسحب وأفلت أو انقر للتصفح"
+    "dragDrop": "اسحب وأفلت أو انقر للتصفح",
+    "zakatDescription": "احسب واجب الزكاة السنوي",
+    "purificationDescription": "طهر أرباح الاستثمار"
   },
   "home": {
     "title": "حاسبة الزكاة والتطهير",

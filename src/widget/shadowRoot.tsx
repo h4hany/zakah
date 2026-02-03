@@ -164,7 +164,16 @@ export function renderInShadowRoot(shadowRoot: ShadowRoot) {
   // Create React root
   const container = document.createElement('div');
   container.id = 'widget-root';
-  container.style.cssText = 'width: 100%; height: 100%;';
+  container.style.cssText = `
+    width: 100%;
+    max-width: 100%;
+    min-height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: auto;
+  `;
   // Set initial direction based on current language
   const currentLang = i18n.language || 'en';
   container.dir = currentLang === 'ar' ? 'rtl' : 'ltr';

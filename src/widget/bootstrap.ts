@@ -22,6 +22,8 @@ export function initializeWidget() {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
     padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
   `;
   
   // Create shadow root
@@ -36,9 +38,19 @@ export function initializeWidget() {
   // Create floating button
   createFloatingButton();
   
-  // Close on background click
+  // Close on background click - but not when clicking inside shadow root
   widgetContainer.addEventListener('click', (e) => {
-    if (e.target === widgetContainer) {
+    // Get the composed path to check the actual clicked element
+    const path = e.composedPath();
+    
+    // When clicking the backdrop directly, the first element in path is widgetContainer
+    // When clicking inside shadow root, the first element is from inside shadow root
+    // So we check if the first element is the widgetContainer itself
+    const firstElement = path[0];
+    const isBackdropClick = firstElement === widgetContainer;
+    
+    // Only close if clicking directly on the backdrop
+    if (isBackdropClick) {
       closeWidget();
     }
   });

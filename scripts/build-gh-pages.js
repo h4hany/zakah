@@ -52,6 +52,14 @@ console.log('Fixing asset paths in index.html...');
 const indexPath = path.join(dist, 'index.html');
 fixHtmlPaths(indexPath);
 
+// Copy 404.html for SPA routing support
+const public404 = path.join(__dirname, '..', 'public', '404.html');
+const dist404 = path.join(dist, '404.html');
+if (fs.existsSync(public404)) {
+  console.log('Copying 404.html for SPA routing...');
+  fs.copyFileSync(public404, dist404);
+}
+
 console.log('Cleaning up dist-standalone...');
 fs.rmSync(distStandalone, { recursive: true, force: true });
 

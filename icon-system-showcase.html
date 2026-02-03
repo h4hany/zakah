@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakat Calculator - Icon System Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        :root {
+            --gold: #C9A24D;
+            --dark: #212325;
+            --surface: #E7E9EB;
+        }
+        
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        body {
+            background: linear-gradient(180deg, #1a1c1e 0%, #212325 100%);
+            color: #E7E9EB;
+        }
+        
+        .icon-card {
+            background: linear-gradient(145deg, #2a2c2e, #212325);
+            border: 1px solid rgba(201, 162, 77, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .icon-card:hover {
+            border-color: rgba(201, 162, 77, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(201, 162, 77, 0.15);
+        }
+        
+        .size-demo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #C9A24D, #E0C78E);
+            color: #000;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 12px;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(201, 162, 77, 0.3);
+        }
+        
+        .color-variant {
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #C9A24D 0%, #E0C78E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-black mb-4">
+                Zakat Calculator <span class="gradient-text">Icon System</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-6">12 Professional Icon Concepts for Islamic FinTech</p>
+            <div class="flex items-center justify-center gap-6 text-sm">
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full" style="background: #C9A24D;"></div>
+                    <span class="text-gray-400">Gold #C9A24D</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full" style="background: #212325;"></div>
+                    <span class="text-gray-400">Dark #212325</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full" style="background: #E7E9EB;"></div>
+                    <span class="text-gray-400">Light #E7E9EB</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon Grid -->
+        <div class="grid grid-cols-3 gap-8 mb-12">
+
+            <!-- Icon 1: Shield Calculator -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Shield Calculator</h3>
+                    <span class="text-xs text-gray-500 mono">#01</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Trust + Calculation symbol. Shield shape with calculator grid inside.</p>
+                
+                <!-- Color Variations -->
+                <div class="space-y-4 mb-6">
+                    <!-- Gold on Dark -->
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 6L10 14V28C10 41.2 18.4 52.6 32 56C45.6 52.6 54 41.2 54 28V14L32 6Z" fill="#C9A24D" stroke="#C9A24D" stroke-width="2"/>
+                                <rect x="22" y="22" width="4" height="4" fill="#212325"/>
+                                <rect x="28" y="22" width="4" height="4" fill="#212325"/>
+                                <rect x="34" y="22" width="4" height="4" fill="#212325"/>
+                                <rect x="22" y="28" width="4" height="4" fill="#212325"/>
+                                <rect x="28" y="28" width="4" height="4" fill="#212325"/>
+                                <rect x="34" y="28" width="4" height="4" fill="#212325"/>
+                                <rect x="22" y="34" width="4" height="4" fill="#212325"/>
+                                <rect x="28" y="34" width="10" height="4" fill="#212325"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <!-- Monochrome -->
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 6L10 14V28C10 41.2 18.4 52.6 32 56C45.6 52.6 54 41.2 54 28V14L32 6Z" fill="#333" stroke="#333" stroke-width="2"/>
+                                <rect x="22" y="22" width="4" height="4" fill="#fff"/>
+                                <rect x="28" y="22" width="4" height="4" fill="#fff"/>
+                                <rect x="34" y="22" width="4" height="4" fill="#fff"/>
+                                <rect x="22" y="28" width="4" height="4" fill="#fff"/>
+                                <rect x="28" y="28" width="4" height="4" fill="#fff"/>
+                                <rect x="34" y="28" width="4" height="4" fill="#fff"/>
+                                <rect x="22" y="34" width="4" height="4" fill="#fff"/>
+                                <rect x="28" y="34" width="10" height="4" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <!-- White on Dark -->
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 6L10 14V28C10 41.2 18.4 52.6 32 56C45.6 52.6 54 41.2 54 28V14L32 6Z" fill="#fff" stroke="#fff" stroke-width="2"/>
+                                <rect x="22" y="22" width="4" height="4" fill="#000"/>
+                                <rect x="28" y="22" width="4" height="4" fill="#000"/>
+                                <rect x="34" y="22" width="4" height="4" fill="#000"/>
+                                <rect x="22" y="28" width="4" height="4" fill="#000"/>
+                                <rect x="28" y="28" width="4" height="4" fill="#000"/>
+                                <rect x="34" y="28" width="4" height="4" fill="#000"/>
+                                <rect x="22" y="34" width="4" height="4" fill="#000"/>
+                                <rect x="28" y="34" width="10" height="4" fill="#000"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <!-- Size Demos -->
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 6L10 14V28C10 41.2 18.4 52.6 32 56C45.6 52.6 54 41.2 54 28V14L32 6Z" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 6L10 14V28C10 41.2 18.4 52.6 32 56C45.6 52.6 54 41.2 54 28V14L32 6Z" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 6L10 14V28C10 41.2 18.4 52.6 32 56C45.6 52.6 54 41.2 54 28V14L32 6Z" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('shield-calculator', 1)">Download SVG</button>
+            </div>
+
+            <!-- Icon 2: Crescent Coin -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Crescent Coin</h3>
+                    <span class="text-xs text-gray-500 mono">#02</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Islamic identity + Finance. Coin with crescent moon integration.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="24" stroke="#C9A24D" stroke-width="3" fill="none"/>
+                                <path d="M38 20C38 26.627 32.627 32 26 32C27.5 32 29 31.5 30.5 30.5C35.5 27 38 23 38 20Z" fill="#C9A24D"/>
+                                <circle cx="42" cy="18" r="2" fill="#C9A24D"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="24" stroke="#333" stroke-width="3" fill="none"/>
+                                <path d="M38 20C38 26.627 32.627 32 26 32C27.5 32 29 31.5 30.5 30.5C35.5 27 38 23 38 20Z" fill="#333"/>
+                                <circle cx="42" cy="18" r="2" fill="#333"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="24" stroke="#fff" stroke-width="3" fill="none"/>
+                                <path d="M38 20C38 26.627 32.627 32 26 32C27.5 32 29 31.5 30.5 30.5C35.5 27 38 23 38 20Z" fill="#fff"/>
+                                <circle cx="42" cy="18" r="2" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="24" stroke="#C9A24D" stroke-width="4" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="24" stroke="#C9A24D" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="24" stroke="#C9A24D" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('crescent-coin', 2)">Download SVG</button>
+            </div>
+
+            <!-- Icon 3: Hand Giving Gold -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Hand Giving Gold</h3>
+                    <span class="text-xs text-gray-500 mono">#03</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Charity symbol. Hand offering coins upward.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 40C20 40 22 38 26 38C30 38 32 40 32 40V50C32 52 30 54 28 54H24C22 54 20 52 20 50V40Z" fill="#C9A24D"/>
+                                <path d="M26 38V32C26 30 27 28 29 28H33C35 28 36 30 36 32V38" stroke="#C9A24D" stroke-width="2" fill="none"/>
+                                <circle cx="24" cy="24" r="3" fill="#C9A24D"/>
+                                <circle cx="32" cy="20" r="3" fill="#C9A24D"/>
+                                <circle cx="28" cy="16" r="2.5" fill="#C9A24D"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 40C20 40 22 38 26 38C30 38 32 40 32 40V50C32 52 30 54 28 54H24C22 54 20 52 20 50V40Z" fill="#333"/>
+                                <path d="M26 38V32C26 30 27 28 29 28H33C35 28 36 30 36 32V38" stroke="#333" stroke-width="2" fill="none"/>
+                                <circle cx="24" cy="24" r="3" fill="#333"/>
+                                <circle cx="32" cy="20" r="3" fill="#333"/>
+                                <circle cx="28" cy="16" r="2.5" fill="#333"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 40C20 40 22 38 26 38C30 38 32 40 32 40V50C32 52 30 54 28 54H24C22 54 20 52 20 50V40Z" fill="#fff"/>
+                                <path d="M26 38V32C26 30 27 28 29 28H33C35 28 36 30 36 32V38" stroke="#fff" stroke-width="2" fill="none"/>
+                                <circle cx="24" cy="24" r="3" fill="#fff"/>
+                                <circle cx="32" cy="20" r="3" fill="#fff"/>
+                                <circle cx="28" cy="16" r="2.5" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 40C20 40 22 38 26 38C30 38 32 40 32 40V50C32 52 30 54 28 54H24C22 54 20 52 20 50V40Z" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 40C20 40 22 38 26 38C30 38 32 40 32 40V50C32 52 30 54 28 54H24C22 54 20 52 20 50V40Z" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 40C20 40 22 38 26 38C30 38 32 40 32 40V50C32 52 30 54 28 54H24C22 54 20 52 20 50V40Z" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('hand-giving', 3)">Download SVG</button>
+            </div>
+
+            <!-- Icon 4: Growth Chart Star -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Growth Chart Star</h3>
+                    <span class="text-xs text-gray-500 mono">#04</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Finance growth + Islamic star. Upward trending chart with star.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 50L20 40L28 44L38 32L48 28" stroke="#C9A24D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="48" cy="28" r="2" fill="#C9A24D"/>
+                                <path d="M48 14L50.5 20L57 21L52.5 25L54 32L48 28L42 32L43.5 25L39 21L45.5 20L48 14Z" fill="#C9A24D"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 50L20 40L28 44L38 32L48 28" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="48" cy="28" r="2" fill="#333"/>
+                                <path d="M48 14L50.5 20L57 21L52.5 25L54 32L48 28L42 32L43.5 25L39 21L45.5 20L48 14Z" fill="#333"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 50L20 40L28 44L38 32L48 28" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="48" cy="28" r="2" fill="#fff"/>
+                                <path d="M48 14L50.5 20L57 21L52.5 25L54 32L48 28L42 32L43.5 25L39 21L45.5 20L48 14Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 50L20 40L28 44L38 32L48 28" stroke="#C9A24D" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 50L20 40L28 44L38 32L48 28" stroke="#C9A24D" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 50L20 40L28 44L38 32L48 28" stroke="#C9A24D" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('growth-chart-star', 4)">Download SVG</button>
+            </div>
+
+            <!-- Icon 5: Minimal Z Mark -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Abstract "Z" Mark</h3>
+                    <span class="text-xs text-gray-500 mono">#05</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Geometric "Z" for Zakat with circular frame. Minimal wordmark.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="2.5"/>
+                                <path d="M22 24H38L26 36H22L34 48H42L30 36H34L46 24H38V20H22V24Z" fill="#C9A24D"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" stroke="#333" stroke-width="2.5"/>
+                                <path d="M22 24H38L26 36H22L34 48H42L30 36H34L46 24H38V20H22V24Z" fill="#333"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" stroke="#fff" stroke-width="2.5"/>
+                                <path d="M22 24H38L26 36H22L34 48H42L30 36H34L46 24H38V20H22V24Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="2.5"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="2.5"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('z-mark', 5)">Download SVG</button>
+            </div>
+
+            <!-- Icon 6: Calculator Badge -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Calculator Badge</h3>
+                    <span class="text-xs text-gray-500 mono">#06</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Classic calculator with checkmark badge overlay for trust.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="14" y="10" width="28" height="44" rx="4" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                                <rect x="18" y="16" width="20" height="8" rx="2" fill="#C9A24D"/>
+                                <rect x="18" y="28" width="4" height="4" rx="1" fill="#C9A24D"/>
+                                <rect x="24" y="28" width="4" height="4" rx="1" fill="#C9A24D"/>
+                                <rect x="30" y="28" width="4" height="4" rx="1" fill="#C9A24D"/>
+                                <rect x="18" y="34" width="4" height="4" rx="1" fill="#C9A24D"/>
+                                <rect x="24" y="34" width="4" height="4" rx="1" fill="#C9A24D"/>
+                                <rect x="30" y="34" width="4" height="4" rx="1" fill="#C9A24D"/>
+                                <circle cx="46" cy="18" r="10" fill="#C9A24D"/>
+                                <path d="M42 18L45 21L50 16" stroke="#212325" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="14" y="10" width="28" height="44" rx="4" stroke="#333" stroke-width="2.5" fill="none"/>
+                                <rect x="18" y="16" width="20" height="8" rx="2" fill="#333"/>
+                                <rect x="18" y="28" width="4" height="4" rx="1" fill="#333"/>
+                                <rect x="24" y="28" width="4" height="4" rx="1" fill="#333"/>
+                                <rect x="30" y="28" width="4" height="4" rx="1" fill="#333"/>
+                                <rect x="18" y="34" width="4" height="4" rx="1" fill="#333"/>
+                                <rect x="24" y="34" width="4" height="4" rx="1" fill="#333"/>
+                                <rect x="30" y="34" width="4" height="4" rx="1" fill="#333"/>
+                                <circle cx="46" cy="18" r="10" fill="#333"/>
+                                <path d="M42 18L45 21L50 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="14" y="10" width="28" height="44" rx="4" stroke="#fff" stroke-width="2.5" fill="none"/>
+                                <rect x="18" y="16" width="20" height="8" rx="2" fill="#fff"/>
+                                <rect x="18" y="28" width="4" height="4" rx="1" fill="#fff"/>
+                                <rect x="24" y="28" width="4" height="4" rx="1" fill="#fff"/>
+                                <rect x="30" y="28" width="4" height="4" rx="1" fill="#fff"/>
+                                <rect x="18" y="34" width="4" height="4" rx="1" fill="#fff"/>
+                                <rect x="24" y="34" width="4" height="4" rx="1" fill="#fff"/>
+                                <rect x="30" y="34" width="4" height="4" rx="1" fill="#fff"/>
+                                <circle cx="46" cy="18" r="10" fill="#fff"/>
+                                <path d="M42 18L45 21L50 16" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="14" y="10" width="28" height="44" rx="4" stroke="#C9A24D" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="14" y="10" width="28" height="44" rx="4" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="14" y="10" width="28" height="44" rx="4" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('calculator-badge', 6)">Download SVG</button>
+            </div>
+
+            <!-- Icon 7: Coin Stack Crescent -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Coin Stack Crescent</h3>
+                    <span class="text-xs text-gray-500 mono">#07</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Wealth + Islamic identity. Stacked coins with crescent silhouette.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="24" cy="44" rx="12" ry="4" fill="#C9A24D"/>
+                                <ellipse cx="24" cy="38" rx="12" ry="4" fill="#C9A24D" opacity="0.8"/>
+                                <ellipse cx="24" cy="32" rx="12" ry="4" fill="#C9A24D" opacity="0.6"/>
+                                <path d="M40 20C40 25.5 36 30 30 32C31.5 32 33 31.5 34.5 30.5C38.5 28 40 24 40 20Z" fill="#C9A24D"/>
+                                <circle cx="44" cy="18" r="2" fill="#C9A24D"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="24" cy="44" rx="12" ry="4" fill="#333"/>
+                                <ellipse cx="24" cy="38" rx="12" ry="4" fill="#333" opacity="0.8"/>
+                                <ellipse cx="24" cy="32" rx="12" ry="4" fill="#333" opacity="0.6"/>
+                                <path d="M40 20C40 25.5 36 30 30 32C31.5 32 33 31.5 34.5 30.5C38.5 28 40 24 40 20Z" fill="#333"/>
+                                <circle cx="44" cy="18" r="2" fill="#333"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="24" cy="44" rx="12" ry="4" fill="#fff"/>
+                                <ellipse cx="24" cy="38" rx="12" ry="4" fill="#fff" opacity="0.8"/>
+                                <ellipse cx="24" cy="32" rx="12" ry="4" fill="#fff" opacity="0.6"/>
+                                <path d="M40 20C40 25.5 36 30 30 32C31.5 32 33 31.5 34.5 30.5C38.5 28 40 24 40 20Z" fill="#fff"/>
+                                <circle cx="44" cy="18" r="2" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="24" cy="44" rx="12" ry="4" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="24" cy="44" rx="12" ry="4" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="24" cy="44" rx="12" ry="4" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('coin-stack', 7)">Download SVG</button>
+            </div>
+
+            <!-- Icon 8: Geometric Star Shield -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Geometric Star Shield</h3>
+                    <span class="text-xs text-gray-500 mono">#08</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Islamic star within shield shape. Premium trust mark.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 8L12 16V30C12 42 19 52 32 56C45 52 52 42 52 30V16L32 8Z" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                                <path d="M32 22L34.5 28L41 29L36.5 33L38 40L32 36L26 40L27.5 33L23 29L29.5 28L32 22Z" fill="#C9A24D"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 8L12 16V30C12 42 19 52 32 56C45 52 52 42 52 30V16L32 8Z" stroke="#333" stroke-width="2.5" fill="none"/>
+                                <path d="M32 22L34.5 28L41 29L36.5 33L38 40L32 36L26 40L27.5 33L23 29L29.5 28L32 22Z" fill="#333"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 8L12 16V30C12 42 19 52 32 56C45 52 52 42 52 30V16L32 8Z" stroke="#fff" stroke-width="2.5" fill="none"/>
+                                <path d="M32 22L34.5 28L41 29L36.5 33L38 40L32 36L26 40L27.5 33L23 29L29.5 28L32 22Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8L12 16V30C12 42 19 52 32 56C45 52 52 42 52 30V16L32 8Z" stroke="#C9A24D" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8L12 16V30C12 42 19 52 32 56C45 52 52 42 52 30V16L32 8Z" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8L12 16V30C12 42 19 52 32 56C45 52 52 42 52 30V16L32 8Z" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('star-shield', 8)">Download SVG</button>
+            </div>
+
+            <!-- Icon 9: Circle Percentage -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Circle Percentage</h3>
+                    <span class="text-xs text-gray-500 mono">#09</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">2.5% Zakat rate symbol. Clean geometric representation.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="3"/>
+                                <text x="32" y="38" font-family="monospace" font-size="16" font-weight="bold" fill="#C9A24D" text-anchor="middle">2.5%</text>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" stroke="#333" stroke-width="3"/>
+                                <text x="32" y="38" font-family="monospace" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">2.5%</text>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" stroke="#fff" stroke-width="3"/>
+                                <text x="32" y="38" font-family="monospace" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">2.5%</text>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="4"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="26" stroke="#C9A24D" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('circle-percentage', 9)">Download SVG</button>
+            </div>
+
+            <!-- Icon 10: Rounded Square App Icon -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Rounded Square App</h3>
+                    <span class="text-xs text-gray-500 mono">#10</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Mobile app icon style. Gold calculator on rounded square.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="48" height="48" rx="12" fill="#C9A24D"/>
+                                <rect x="18" y="18" width="28" height="8" rx="2" fill="#212325"/>
+                                <rect x="18" y="30" width="6" height="6" rx="2" fill="#212325"/>
+                                <rect x="27" y="30" width="6" height="6" rx="2" fill="#212325"/>
+                                <rect x="36" y="30" width="6" height="6" rx="2" fill="#212325"/>
+                                <rect x="18" y="38" width="6" height="6" rx="2" fill="#212325"/>
+                                <rect x="27" y="38" width="15" height="6" rx="2" fill="#212325"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="48" height="48" rx="12" fill="#333"/>
+                                <rect x="18" y="18" width="28" height="8" rx="2" fill="#fff"/>
+                                <rect x="18" y="30" width="6" height="6" rx="2" fill="#fff"/>
+                                <rect x="27" y="30" width="6" height="6" rx="2" fill="#fff"/>
+                                <rect x="36" y="30" width="6" height="6" rx="2" fill="#fff"/>
+                                <rect x="18" y="38" width="6" height="6" rx="2" fill="#fff"/>
+                                <rect x="27" y="38" width="15" height="6" rx="2" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="48" height="48" rx="12" fill="#fff"/>
+                                <rect x="18" y="18" width="28" height="8" rx="2" fill="#000"/>
+                                <rect x="18" y="30" width="6" height="6" rx="2" fill="#000"/>
+                                <rect x="27" y="30" width="6" height="6" rx="2" fill="#000"/>
+                                <rect x="36" y="30" width="6" height="6" rx="2" fill="#000"/>
+                                <rect x="18" y="38" width="6" height="6" rx="2" fill="#000"/>
+                                <rect x="27" y="38" width="15" height="6" rx="2" fill="#000"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="48" height="48" rx="12" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="48" height="48" rx="12" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="48" height="48" rx="12" fill="#C9A24D"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('app-icon', 10)">Download SVG</button>
+            </div>
+
+            <!-- Icon 11: Minimal Line Calculator -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Minimal Line Calculator</h3>
+                    <span class="text-xs text-gray-500 mono">#11</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Ultra-minimal line art. Modern fintech aesthetic.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="18" y="12" width="28" height="40" rx="4" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="22" y1="20" x2="42" y2="20" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="22" y1="28" x2="26" y2="28" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="30" y1="28" x2="34" y2="28" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="38" y1="28" x2="42" y2="28" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="22" y1="34" x2="26" y2="34" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="30" y1="34" x2="34" y2="34" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="38" y1="34" x2="42" y2="34" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="22" y1="40" x2="26" y2="40" stroke="#C9A24D" stroke-width="2"/>
+                                <line x1="30" y1="40" x2="42" y2="40" stroke="#C9A24D" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="18" y="12" width="28" height="40" rx="4" stroke="#333" stroke-width="2"/>
+                                <line x1="22" y1="20" x2="42" y2="20" stroke="#333" stroke-width="2"/>
+                                <line x1="22" y1="28" x2="26" y2="28" stroke="#333" stroke-width="2"/>
+                                <line x1="30" y1="28" x2="34" y2="28" stroke="#333" stroke-width="2"/>
+                                <line x1="38" y1="28" x2="42" y2="28" stroke="#333" stroke-width="2"/>
+                                <line x1="22" y1="34" x2="26" y2="34" stroke="#333" stroke-width="2"/>
+                                <line x1="30" y1="34" x2="34" y2="34" stroke="#333" stroke-width="2"/>
+                                <line x1="38" y1="34" x2="42" y2="34" stroke="#333" stroke-width="2"/>
+                                <line x1="22" y1="40" x2="26" y2="40" stroke="#333" stroke-width="2"/>
+                                <line x1="30" y1="40" x2="42" y2="40" stroke="#333" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="18" y="12" width="28" height="40" rx="4" stroke="#fff" stroke-width="2"/>
+                                <line x1="22" y1="20" x2="42" y2="20" stroke="#fff" stroke-width="2"/>
+                                <line x1="22" y1="28" x2="26" y2="28" stroke="#fff" stroke-width="2"/>
+                                <line x1="30" y1="28" x2="34" y2="28" stroke="#fff" stroke-width="2"/>
+                                <line x1="38" y1="28" x2="42" y2="28" stroke="#fff" stroke-width="2"/>
+                                <line x1="22" y1="34" x2="26" y2="34" stroke="#fff" stroke-width="2"/>
+                                <line x1="30" y1="34" x2="34" y2="34" stroke="#fff" stroke-width="2"/>
+                                <line x1="38" y1="34" x2="42" y2="34" stroke="#fff" stroke-width="2"/>
+                                <line x1="22" y1="40" x2="26" y2="40" stroke="#fff" stroke-width="2"/>
+                                <line x1="30" y1="40" x2="42" y2="40" stroke="#fff" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18" y="12" width="28" height="40" rx="4" stroke="#C9A24D" stroke-width="2.5"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18" y="12" width="28" height="40" rx="4" stroke="#C9A24D" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18" y="12" width="28" height="40" rx="4" stroke="#C9A24D" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('minimal-line', 11)">Download SVG</button>
+            </div>
+
+            <!-- Icon 12: Geometric Hexagon Calc -->
+            <div class="icon-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-gray-200">Geometric Hexagon</h3>
+                    <span class="text-xs text-gray-500 mono">#12</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">Modern geometric. Hexagon with calculator dots pattern.</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="color-variant" style="background: #212325;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 8L48 18V38L32 48L16 38V18L32 8Z" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                                <circle cx="26" cy="26" r="2" fill="#C9A24D"/>
+                                <circle cx="32" cy="26" r="2" fill="#C9A24D"/>
+                                <circle cx="38" cy="26" r="2" fill="#C9A24D"/>
+                                <circle cx="26" cy="32" r="2" fill="#C9A24D"/>
+                                <circle cx="32" cy="32" r="2" fill="#C9A24D"/>
+                                <circle cx="38" cy="32" r="2" fill="#C9A24D"/>
+                                <circle cx="26" cy="38" r="2" fill="#C9A24D"/>
+                                <rect x="30" y="36" width="10" height="4" rx="2" fill="#C9A24D"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-500">Gold on Dark</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #f5f5f5;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 8L48 18V38L32 48L16 38V18L32 8Z" stroke="#333" stroke-width="2.5" fill="none"/>
+                                <circle cx="26" cy="26" r="2" fill="#333"/>
+                                <circle cx="32" cy="26" r="2" fill="#333"/>
+                                <circle cx="38" cy="26" r="2" fill="#333"/>
+                                <circle cx="26" cy="32" r="2" fill="#333"/>
+                                <circle cx="32" cy="32" r="2" fill="#333"/>
+                                <circle cx="38" cy="32" r="2" fill="#333"/>
+                                <circle cx="26" cy="38" r="2" fill="#333"/>
+                                <rect x="30" y="36" width="10" height="4" rx="2" fill="#333"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-700">Monochrome</p>
+                    </div>
+                    
+                    <div class="color-variant" style="background: #000;">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 8L48 18V38L32 48L16 38V18L32 8Z" stroke="#fff" stroke-width="2.5" fill="none"/>
+                                <circle cx="26" cy="26" r="2" fill="#fff"/>
+                                <circle cx="32" cy="26" r="2" fill="#fff"/>
+                                <circle cx="38" cy="26" r="2" fill="#fff"/>
+                                <circle cx="26" cy="32" r="2" fill="#fff"/>
+                                <circle cx="32" cy="32" r="2" fill="#fff"/>
+                                <circle cx="38" cy="32" r="2" fill="#fff"/>
+                                <circle cx="26" cy="38" r="2" fill="#fff"/>
+                                <rect x="30" y="36" width="10" height="4" rx="2" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-center text-gray-400">White on Dark</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-demo" style="width: 24px; height: 24px;">
+                        <svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8L48 18V38L32 48L16 38V18L32 8Z" stroke="#C9A24D" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 40px; height: 40px;">
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8L48 18V38L32 48L16 38V18L32 8Z" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="size-demo" style="width: 64px; height: 64px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8L48 18V38L32 48L16 38V18L32 8Z" stroke="#C9A24D" stroke-width="2.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-gray-500 ml-auto">16px / 32px / 64px</span>
+                </div>
+                
+                <button class="download-btn w-full" onclick="downloadSVG('hexagon-calc', 12)">Download SVG</button>
+            </div>
+
+        </div>
+
+        <!-- Usage Guidelines -->
+        <div class="mt-16 p-8 rounded-2xl" style="background: linear-gradient(145deg, #2a2c2e, #212325); border: 1px solid rgba(201, 162, 77, 0.2);">
+            <h2 class="text-3xl font-black mb-6 gradient-text">Usage Guidelines</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-200 mb-3">✓ Recommended Uses</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>• Floating widget buttons (64px-128px)</li>
+                        <li>• Mobile app icons (1024px iOS, 512px Android)</li>
+                        <li>• Favicons (16px, 32px, 64px)</li>
+                        <li>• PDF report headers (128px-256px)</li>
+                        <li>• Website logos and navigation</li>
+                        <li>• Marketing materials and presentations</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-200 mb-3">⚡ Technical Specs</h3>
+                    <ul class="space-y-2 text-sm text-gray-400 mono">
+                        <li>• Format: SVG (scalable vector)</li>
+                        <li>• Viewbox: 64x64 (1:1 aspect ratio)</li>
+                        <li>• Stroke weight: 2-3px (consistent)</li>
+                        <li>• Colors: #C9A24D, #212325, #fff</li>
+                        <li>• Transparent background</li>
+                        <li>• Min size: 16px, Max: unlimited</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function downloadSVG(name, index) {
+            // Get the SVG element from the corresponding icon card
+            const iconCard = document.querySelectorAll('.icon-card')[index - 1];
+            const svgElement = iconCard.querySelector('.color-variant svg').cloneNode(true);
+            
+            // Create SVG string
+            const svgString = new XMLSerializer().serializeToString(svgElement);
+            const svgBlob = new Blob([svgString], { type: 'image/svg+xml' });
+            const svgUrl = URL.createObjectURL(svgBlob);
+            
+            // Create download link
+            const downloadLink = document.createElement('a');
+            downloadLink.href = svgUrl;
+            downloadLink.download = `zakat-calculator-${name}.svg`;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(svgUrl);
+        }
+    </script>
+
+</body>
+</html>

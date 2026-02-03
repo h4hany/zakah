@@ -5,9 +5,15 @@ import enTranslations from '@/i18n/en.json';
 import arTranslations from '@/i18n/ar.json';
 
 export function initLocalization() {
-  const config = getConfig();
-  const browserLang = navigator.language.split('-')[0];
-  const defaultLang = config.language || (browserLang === 'ar' ? 'ar' : 'en');
+  let defaultLang = 'en';
+  try {
+    const config = getConfig();
+    defaultLang = config.language || defaultLang;
+  } catch {
+    // In standalone mode, getConfig might not be available
+    const browserLang = navigator.language.split('-')[0];
+    defaultLang = browserLang === 'ar' ? 'ar' : 'en';
+  }
   
   i18n
     .use(initReactI18next)

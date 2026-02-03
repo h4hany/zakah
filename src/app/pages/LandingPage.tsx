@@ -1,8 +1,18 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
+import { changeLanguage } from '@/services/localizationService';
+import { StarShield, ShieldCalculator } from '@/icons';
 
 export default function LandingPage() {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language as 'en' | 'ar';
+  const isRTL = currentLang === 'ar';
+
+  const handleLanguageChange = (lang: 'en' | 'ar') => {
+    changeLanguage(lang);
+  };
 
   useEffect(() => {
     // Scroll reveal animation
@@ -29,29 +39,55 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{
-      background: 'linear-gradient(180deg, #1a1c1e 0%, #212325 50%, #2a2c2e 100%)',
-      color: '#E7E9EB'
-    }}>
+    <div 
+      className="min-h-screen" 
+      dir={isRTL ? 'rtl' : 'ltr'}
+      style={{
+        background: 'linear-gradient(180deg, #1a1c1e 0%, #212325 50%, #2a2c2e 100%)',
+        color: '#E7E9EB'
+      }}
+    >
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-lg border-b border-yellow-600/20">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-600 to-yellow-700 flex items-center justify-center">
-                <span className="text-xl">✦</span>
+                <StarShield size={24} color="#000" />
               </div>
-              <span className="text-xl font-bold text-gray-100">Zakat Calculator</span>
+              <span className="text-xl font-bold text-gray-100">{t('header.title')}</span>
             </div>
             <div className="flex items-center gap-6">
-              <a href="#features" className="text-sm text-gray-400 hover:text-yellow-500 transition-colors">Features</a>
-              <a href="#benefits" className="text-sm text-gray-400 hover:text-yellow-500 transition-colors">Benefits</a>
-              <a href="#demo" className="text-sm text-gray-400 hover:text-yellow-500 transition-colors">Demo</a>
+              <a href="#features" className="text-sm text-gray-400 hover:text-yellow-500 transition-colors">{t('landing.nav.features')}</a>
+              <a href="#benefits" className="text-sm text-gray-400 hover:text-yellow-500 transition-colors">{t('landing.nav.benefits')}</a>
+              <a href="#demo" className="text-sm text-gray-400 hover:text-yellow-500 transition-colors">{t('landing.nav.demo')}</a>
+              <div className="flex items-center gap-1.5 bg-black/20 rounded-xl p-1">
+                <button
+                  onClick={() => handleLanguageChange('en')}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    currentLang === 'en'
+                      ? 'bg-yellow-600 text-black'
+                      : 'text-gray-500 hover:bg-white/5'
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => handleLanguageChange('ar')}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    currentLang === 'ar'
+                      ? 'bg-yellow-600 text-black'
+                      : 'text-gray-500 hover:bg-white/5'
+                  }`}
+                >
+                  AR
+                </button>
+              </div>
               <button 
-                onClick={() => navigate('/excel')}
+                onClick={() => navigate('/calculator')}
                 className="px-6 py-2 rounded-xl bg-gradient-to-r from-yellow-600 to-yellow-700 text-black font-semibold text-sm hover:shadow-lg hover:shadow-yellow-600/20 transition-all"
               >
-                Get Started
+                {t('landing.nav.getStarted')}
               </button>
             </div>
           </div>
@@ -74,31 +110,36 @@ export default function LandingPage() {
             {/* Left: Text Content */}
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-600/10 border border-yellow-600/30 mb-6 animate-[fadeInUp_0.8s_ease-out_0.1s_forwards] opacity-0">
-                <span className="text-xs font-semibold text-yellow-500 uppercase tracking-wide">Excel-First Calculator</span>
+                <span className="text-xs font-semibold text-yellow-500 uppercase tracking-wide">{t('landing.hero.badge')}</span>
               </div>
               
               <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight animate-[fadeInUp_0.8s_ease-out_0.2s_forwards] opacity-0">
-                Calculate Your <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">Zakat</span> in Minutes, Not Hours
+                <Trans
+                  i18nKey="landing.hero.title"
+                  values={{ zakat: t('landing.hero.zakat') }}
+                  components={{
+                    zakat: <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent" />
+                  }}
+                />
               </h1>
               
               <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.3s_forwards] opacity-0">
-                Upload your portfolio Excel, map your columns, and get Shariah-compliant calculations instantly. 
-                Built for modern Muslims who manage their finances digitally.
+                {t('landing.hero.subtitle')}
               </p>
               
               <div className="flex items-center gap-4 flex-wrap animate-[fadeInUp_0.8s_ease-out_0.4s_forwards] opacity-0">
+              <button 
+                onClick={() => navigate('/calculator')}
+                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-yellow-600 to-yellow-700 text-black font-bold hover:shadow-lg hover:shadow-yellow-600/30 transition-all"
+                style={{ boxShadow: '0 0 30px rgba(201, 162, 77, 0.3)' }}
+              >
+                {t('landing.hero.tryCalculator')}
+              </button>
                 <button 
-                  onClick={() => navigate('/excel')}
-                  className="px-8 py-4 rounded-2xl bg-gradient-to-r from-yellow-600 to-yellow-700 text-black font-bold hover:shadow-lg hover:shadow-yellow-600/30 transition-all"
-                  style={{ boxShadow: '0 0 30px rgba(201, 162, 77, 0.3)' }}
-                >
-                  Try the Calculator →
-                </button>
-                <button 
-                  onClick={() => navigate('/form')}
+                  onClick={() => navigate('/calculator')}
                   className="px-8 py-4 rounded-2xl border border-yellow-600/50 text-yellow-600 font-semibold hover:bg-yellow-600/10 transition-all"
                 >
-                  Watch Demo
+                  {t('landing.hero.watchDemo')}
                 </button>
               </div>
               
@@ -110,7 +151,7 @@ export default function LandingPage() {
                   backdropFilter: 'blur(10px)'
                 }}>
                   <p className="text-3xl font-black mono" style={{ color: '#C9A24D' }}>2.5%</p>
-                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">Zakat Rate</p>
+                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{t('landing.hero.stats.zakatRate')}</p>
                 </div>
                 <div className="rounded-2xl p-5" style={{
                   background: 'rgba(201, 162, 77, 0.05)',
@@ -118,7 +159,7 @@ export default function LandingPage() {
                   backdropFilter: 'blur(10px)'
                 }}>
                   <p className="text-3xl font-black mono" style={{ color: '#C9A24D' }}>4</p>
-                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">Ruling Sources</p>
+                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{t('landing.hero.stats.rulingSources')}</p>
                 </div>
                 <div className="rounded-2xl p-5" style={{
                   background: 'rgba(201, 162, 77, 0.05)',
@@ -126,7 +167,7 @@ export default function LandingPage() {
                   backdropFilter: 'blur(10px)'
                 }}>
                   <p className="text-3xl font-black mono" style={{ color: '#C9A24D' }}>1-Click</p>
-                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">PDF Export</p>
+                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{t('landing.hero.stats.pdfExport')}</p>
                 </div>
               </div>
             </div>
@@ -141,9 +182,9 @@ export default function LandingPage() {
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-600 to-yellow-700 flex items-center justify-center">
-                        <span className="text-lg">✦</span>
+                        <ShieldCalculator size={20} color="#000" innerColor="#fff" />
                       </div>
-                      <span className="text-sm font-bold text-gray-200">Zakat Calculator</span>
+                      <span className="text-sm font-bold text-gray-200">{t('header.title')}</span>
                     </div>
                     <div className="flex gap-1">
                       <div className="w-2 h-2 rounded-full bg-red-500"></div>
@@ -178,7 +219,7 @@ export default function LandingPage() {
                   
                   {/* Result Preview */}
                   <div className="mt-4 bg-gradient-to-br from-yellow-600/20 to-yellow-700/10 rounded-xl p-4 border border-yellow-600/30">
-                    <p className="text-xs text-gray-400 mb-1">Total Amount Due</p>
+                    <p className="text-xs text-gray-400 mb-1">{t('landing.hero.preview.totalAmountDue')}</p>
                     <p className="text-2xl font-black text-yellow-500 mono">$1,247.50</p>
                   </div>
                 </div>
@@ -193,24 +234,30 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Why Choose <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">Our Calculator</span>
+              <Trans
+                i18nKey="landing.benefits.title"
+                values={{ ourCalculator: t('landing.benefits.ourCalculator') }}
+                components={{
+                  ourCalculator: <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent" />
+                }}
+              />
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              Built by Muslims, for Muslims. Experience the easiest way to fulfill your Zakat obligation.
+              {t('landing.benefits.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Lightning Fast', desc: 'Upload your Excel portfolio and get results in seconds. No manual data entry. No tedious calculations. Just drag, drop, and calculate.' },
-              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Shariah Compliant', desc: 'Calculations based on authentic Islamic rulings from AAOIFI, Permanent Committee, and Islamic Fiqh Academy. Choose your preferred authority.' },
-              { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Excel-First Design', desc: 'Already have your portfolio in Excel? Perfect. Our calculator works with your existing spreadsheets. No data migration needed.' },
-              { icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4', title: 'Smart Column Mapping', desc: 'Click column headers to assign meaning: Shares, Price, Profit, Haram %. The calculator adapts to your spreadsheet structure.' },
-              { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Dual Calculation', desc: 'Calculate both Zakat (2.5% on wealth) and Purification (removing haram income) in one workflow. Check one or both boxes.' },
-              { icon: 'M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Instant PDF Export', desc: 'Download professional PDF reports with full breakdown, ruling source, and calculation details. Perfect for record-keeping.' },
-              { icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', title: '100% Private', desc: 'Your financial data never leaves your device. All calculations happen locally. No cloud storage, no data collection.' },
-              { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129', title: 'Bilingual Support', desc: 'Full support for English and Arabic (RTL). Switch languages with one click. UI adapts automatically.' },
-              { icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01', title: 'No Installation', desc: 'Works in any modern browser. No software to download. No account required. Just open and start calculating.' },
+              { key: 'lightningFast', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+              { key: 'shariahCompliant', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+              { key: 'excelFirst', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+              { key: 'smartMapping', icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4' },
+              { key: 'dualCalculation', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+              { key: 'pdfExport', icon: 'M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+              { key: 'private', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
+              { key: 'bilingual', icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129' },
+              { key: 'noInstall', icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01' },
             ].map((benefit, idx) => (
               <div
                 key={idx}
@@ -240,8 +287,8 @@ export default function LandingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={benefit.icon}/>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-100">{benefit.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{benefit.desc}</p>
+                <h3 className="text-2xl font-bold mb-3 text-gray-100">{t(`landing.benefits.items.${benefit.key}.title`)}</h3>
+                <p className="text-gray-400 leading-relaxed">{t(`landing.benefits.items.${benefit.key}.desc`)}</p>
               </div>
             ))}
           </div>
@@ -253,10 +300,16 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Everything You <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">Need</span>
+              <Trans
+                i18nKey="landing.features.title"
+                values={{ need: t('landing.features.need') }}
+                components={{
+                  need: <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent" />
+                }}
+              />
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              Compare our calculator with traditional manual methods
+              {t('landing.features.subtitle')}
             </p>
           </div>
 
@@ -273,20 +326,20 @@ export default function LandingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-300">Traditional Method</h3>
+                <h3 className="text-2xl font-bold text-gray-300">{t('landing.features.traditional.title')}</h3>
               </div>
               <ul className="space-y-4">
                 {[
-                  'Manual calculations with calculator',
-                  'Hours of data entry from statements',
-                  'Risk of calculation errors',
-                  'No automated breakdown',
-                  'Difficult to verify ruling sources',
-                  'Manual PDF creation for records'
-                ].map((item, idx) => (
+                  'manual',
+                  'hours',
+                  'errors',
+                  'noBreakdown',
+                  'difficult',
+                  'manualPdf'
+                ].map((key, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <span className="text-red-500 mt-1">✗</span>
-                    <span className="text-gray-400">{item}</span>
+                    <span className="text-gray-400">{t(`landing.features.traditional.items.${key}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -304,20 +357,20 @@ export default function LandingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-yellow-500">Our Calculator</h3>
+                <h3 className="text-2xl font-bold text-yellow-500">{t('landing.features.ourCalculator.title')}</h3>
               </div>
               <ul className="space-y-4">
                 {[
-                  'Instant automated calculations',
-                  'Upload Excel - done in seconds',
-                  '100% accurate calculations',
-                  'Detailed step-by-step breakdown',
-                  'Multiple Islamic authority sources',
-                  'One-click professional PDF export'
-                ].map((item, idx) => (
+                  'instant',
+                  'upload',
+                  'accurate',
+                  'detailed',
+                  'multiple',
+                  'oneClick'
+                ].map((key, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <span className="text-yellow-500 mt-1">✓</span>
-                    <span className="text-gray-200 font-medium">{item}</span>
+                    <span className="text-gray-200 font-medium">{t(`landing.features.ourCalculator.items.${key}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -331,18 +384,24 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4">
-              <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">3 Simple</span> Steps
+              <Trans
+                i18nKey="landing.howItWorks.title"
+                values={{ threeSimple: t('landing.howItWorks.threeSimple') }}
+                components={{
+                  threeSimple: <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent" />
+                }}
+              />
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              From Excel to Zakat calculation in under 60 seconds
+              {t('landing.howItWorks.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { num: '1', title: 'Upload Excel', desc: 'Drag and drop your portfolio spreadsheet. Supports .xlsx, .xls, and .csv files.' },
-              { num: '2', title: 'Map Columns', desc: 'Click column headers to assign: Shares, Price, Profit, Haram %. Select calculation type.' },
-              { num: '3', title: 'Get Results', desc: 'View detailed breakdown, choose ruling source, and export PDF. All done!' },
+              { num: '1', key: 'upload' },
+              { num: '2', key: 'map' },
+              { num: '3', key: 'results' },
             ].map((step, idx) => (
               <div key={idx} className="text-center">
                 <div 
@@ -351,8 +410,8 @@ export default function LandingPage() {
                 >
                   {step.num}
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-100">{step.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{step.desc}</p>
+                <h3 className="text-2xl font-bold mb-3 text-gray-100">{t(`landing.howItWorks.steps.${step.key}.title`)}</h3>
+                <p className="text-gray-400 leading-relaxed">{t(`landing.howItWorks.steps.${step.key}.desc`)}</p>
               </div>
             ))}
           </div>
@@ -364,24 +423,30 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/10 via-transparent to-yellow-700/10"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
-            Ready to Simplify Your <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">Zakat</span>?
+            <Trans
+              i18nKey="landing.cta.title"
+              values={{ zakat: t('landing.cta.zakat') }}
+              components={{
+                zakat: <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent" />
+              }}
+            />
           </h2>
           <p className="text-xl md:text-2xl text-gray-400 mb-10">
-            Join thousands of Muslims who calculate their Zakat accurately and effortlessly.
+            {t('landing.cta.subtitle')}
           </p>
           <div className="flex items-center justify-center gap-6 flex-wrap">
             <button 
-              onClick={() => navigate('/excel')}
+              onClick={() => navigate('/calculator')}
               className="px-12 py-5 rounded-2xl bg-gradient-to-r from-yellow-600 to-yellow-700 text-black font-bold text-lg hover:shadow-2xl hover:shadow-yellow-600/30 transition-all"
               style={{ boxShadow: '0 0 30px rgba(201, 162, 77, 0.3)' }}
             >
-              Start Calculating Now →
+              {t('landing.cta.startCalculating')}
             </button>
             <button 
-              onClick={() => navigate('/form')}
+              onClick={() => navigate('/calculator')}
               className="px-12 py-5 rounded-2xl border-2 border-yellow-600/50 text-yellow-600 font-bold text-lg hover:bg-yellow-600/10 transition-all"
             >
-              Watch Tutorial
+              {t('landing.cta.watchTutorial')}
             </button>
           </div>
           
@@ -389,17 +454,17 @@ export default function LandingPage() {
           <div className="mt-16 flex items-center justify-center gap-12 flex-wrap">
             <div className="text-center">
               <p className="text-3xl font-black mono" style={{ color: '#C9A24D' }}>100%</p>
-              <p className="text-sm text-gray-500 mt-1">Shariah Compliant</p>
+              <p className="text-sm text-gray-500 mt-1">{t('landing.cta.trust.shariahCompliant')}</p>
             </div>
             <div className="w-px h-12 bg-gray-700"></div>
             <div className="text-center">
               <p className="text-3xl font-black mono" style={{ color: '#C9A24D' }}>0</p>
-              <p className="text-sm text-gray-500 mt-1">Data Collection</p>
+              <p className="text-sm text-gray-500 mt-1">{t('landing.cta.trust.dataCollection')}</p>
             </div>
             <div className="w-px h-12 bg-gray-700"></div>
             <div className="text-center">
               <p className="text-3xl font-black mono" style={{ color: '#C9A24D' }}>Free</p>
-              <p className="text-sm text-gray-500 mt-1">Forever</p>
+              <p className="text-sm text-gray-500 mt-1">{t('landing.cta.trust.forever')}</p>
             </div>
           </div>
         </div>
@@ -411,22 +476,22 @@ export default function LandingPage() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-600 to-yellow-700 flex items-center justify-center">
-                <span className="text-xl">✦</span>
+                <StarShield size={24} color="#000" />
               </div>
               <div>
-                <span className="text-lg font-bold text-gray-100">Zakat Calculator</span>
-                <p className="text-xs text-gray-500">Excel-First Islamic Finance Tool</p>
+                <span className="text-lg font-bold text-gray-100">{t('header.title')}</span>
+                <p className="text-xs text-gray-500">{t('landing.footer.tagline')}</p>
               </div>
             </div>
             <div className="flex items-center gap-8 flex-wrap">
-              <a href="#" className="text-sm text-gray-500 hover:text-yellow-500 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-yellow-500 transition-colors">Terms of Use</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-yellow-500 transition-colors">Contact</a>
+              <a href="#" className="text-sm text-gray-500 hover:text-yellow-500 transition-colors">{t('landing.footer.privacy')}</a>
+              <a href="#" className="text-sm text-gray-500 hover:text-yellow-500 transition-colors">{t('landing.footer.terms')}</a>
+              <a href="#" className="text-sm text-gray-500 hover:text-yellow-500 transition-colors">{t('landing.footer.contact')}</a>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center">
             <p className="text-sm text-gray-600">
-              © 2026 Zakat Calculator. Built with ♥ for the Muslim community.
+              {t('landing.footer.copyright')}
             </p>
           </div>
         </div>

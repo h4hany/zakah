@@ -1,13 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { changeLanguage } from '@/services/localizationService';
-import { getConfig } from '@/widget/config';
+import { StarShield } from '@/icons';
 
 export default function Header() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const config = getConfig();
   const currentLang = i18n.language as 'en' | 'ar';
   const isRTL = currentLang === 'ar';
   const isHome = location.pathname === '/';
@@ -44,7 +43,7 @@ export default function Header() {
             </button>
           )}
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-600 to-yellow-700 flex items-center justify-center">
-            <span className="text-xl">✦</span>
+            <StarShield size={24} color="#000" />
           </div>
           <div>
             <h1 className="text-lg font-bold text-gray-100">{t('header.title')}</h1>

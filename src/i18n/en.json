@@ -64,6 +64,138 @@
   "header": {
     "title": "Zakat Calculator",
     "subtitle": "Islamic Finance Widget"
+  },
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "benefits": "Benefits",
+      "demo": "Demo",
+      "getStarted": "Get Started"
+    },
+    "hero": {
+      "badge": "Excel-First Calculator",
+      "title": "Calculate Your <zakat>{{zakat}}</zakat> in Minutes, Not Hours",
+      "zakat": "Zakat",
+      "subtitle": "Upload your portfolio Excel, map your columns, and get Shariah-compliant calculations instantly. Built for modern Muslims who manage their finances digitally.",
+      "tryCalculator": "Try the Calculator →",
+      "watchDemo": "Watch Demo",
+      "stats": {
+        "zakatRate": "Zakat Rate",
+        "rulingSources": "Ruling Sources",
+        "pdfExport": "PDF Export"
+      },
+      "preview": {
+        "totalAmountDue": "Total Amount Due"
+      }
+    },
+    "benefits": {
+      "title": "Why Choose <ourCalculator>{{ourCalculator}}</ourCalculator>",
+      "ourCalculator": "Our Calculator",
+      "subtitle": "Built by Muslims, for Muslims. Experience the easiest way to fulfill your Zakat obligation.",
+      "items": {
+        "lightningFast": {
+          "title": "Lightning Fast",
+          "desc": "Upload your Excel portfolio and get results in seconds. No manual data entry. No tedious calculations. Just drag, drop, and calculate."
+        },
+        "shariahCompliant": {
+          "title": "Shariah Compliant",
+          "desc": "Calculations based on authentic Islamic rulings from AAOIFI, Permanent Committee, and Islamic Fiqh Academy. Choose your preferred authority."
+        },
+        "excelFirst": {
+          "title": "Excel-First Design",
+          "desc": "Already have your portfolio in Excel? Perfect. Our calculator works with your existing spreadsheets. No data migration needed."
+        },
+        "smartMapping": {
+          "title": "Smart Column Mapping",
+          "desc": "Click column headers to assign meaning: Shares, Price, Profit, Haram %. The calculator adapts to your spreadsheet structure."
+        },
+        "dualCalculation": {
+          "title": "Dual Calculation",
+          "desc": "Calculate both Zakat (2.5% on wealth) and Purification (removing haram income) in one workflow. Check one or both boxes."
+        },
+        "pdfExport": {
+          "title": "Instant PDF Export",
+          "desc": "Download professional PDF reports with full breakdown, ruling source, and calculation details. Perfect for record-keeping."
+        },
+        "private": {
+          "title": "100% Private",
+          "desc": "Your financial data never leaves your device. All calculations happen locally. No cloud storage, no data collection."
+        },
+        "bilingual": {
+          "title": "Bilingual Support",
+          "desc": "Full support for English and Arabic (RTL). Switch languages with one click. UI adapts automatically."
+        },
+        "noInstall": {
+          "title": "No Installation",
+          "desc": "Works in any modern browser. No software to download. No account required. Just open and start calculating."
+        }
+      }
+    },
+    "features": {
+      "title": "Everything You <need>{{need}}</need>",
+      "need": "Need",
+      "subtitle": "Compare our calculator with traditional manual methods",
+      "traditional": {
+        "title": "Traditional Method",
+        "items": {
+          "manual": "Manual calculations with calculator",
+          "hours": "Hours of data entry from statements",
+          "errors": "Risk of calculation errors",
+          "noBreakdown": "No automated breakdown",
+          "difficult": "Difficult to verify ruling sources",
+          "manualPdf": "Manual PDF creation for records"
+        }
+      },
+      "ourCalculator": {
+        "title": "Our Calculator",
+        "items": {
+          "instant": "Instant automated calculations",
+          "upload": "Upload Excel - done in seconds",
+          "accurate": "100% accurate calculations",
+          "detailed": "Detailed step-by-step breakdown",
+          "multiple": "Multiple Islamic authority sources",
+          "oneClick": "One-click professional PDF export"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "<threeSimple>{{threeSimple}}</threeSimple> Steps",
+      "threeSimple": "3 Simple",
+      "subtitle": "From Excel to Zakat calculation in under 60 seconds",
+      "steps": {
+        "upload": {
+          "title": "Upload Excel",
+          "desc": "Drag and drop your portfolio spreadsheet. Supports .xlsx, .xls, and .csv files."
+        },
+        "map": {
+          "title": "Map Columns",
+          "desc": "Click column headers to assign: Shares, Price, Profit, Haram %. Select calculation type."
+        },
+        "results": {
+          "title": "Get Results",
+          "desc": "View detailed breakdown, choose ruling source, and export PDF. All done!"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Simplify Your <zakat>{{zakat}}</zakat>?",
+      "zakat": "Zakat",
+      "subtitle": "Join thousands of Muslims who calculate their Zakat accurately and effortlessly.",
+      "startCalculating": "Start Calculating Now →",
+      "watchTutorial": "Watch Tutorial",
+      "trust": {
+        "shariahCompliant": "Shariah Compliant",
+        "dataCollection": "Data Collection",
+        "forever": "Forever"
+      }
+    },
+    "footer": {
+      "tagline": "Excel-First Islamic Finance Tool",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "contact": "Contact",
+      "copyright": "© 2026 Zakat Calculator. Built with ♥ for the Muslim community."
+    }
   }
 }
 

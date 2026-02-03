@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import ExcelMode from './pages/ExcelMode';
-import FormMode from './pages/FormMode';
+import Calculator from './pages/Calculator';
 import AppLayout from './components/AppLayout';
 
 export function createStandaloneRouter() {
@@ -11,22 +10,12 @@ export function createStandaloneRouter() {
       element: <LandingPage />,
     },
     {
-      path: '/excel',
+      path: '/calculator',
       element: <AppLayout />,
       children: [
         {
           index: true,
-          element: <ExcelMode />,
-        },
-      ],
-    },
-    {
-      path: '/form',
-      element: <AppLayout />,
-      children: [
-        {
-          index: true,
-          element: <FormMode />,
+          element: <Calculator />,
         },
       ],
     },

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { StarShield } from '@/icons';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="text-center space-y-4">
         <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-700 flex items-center justify-center mb-4">
-          <span className="text-4xl">✦</span>
+          <StarShield size={48} color="#000" />
         </div>
         <h1 className="text-3xl font-bold text-gray-100">{t('home.title')}</h1>
         <p className="text-gray-400">{t('home.subtitle')}</p>
